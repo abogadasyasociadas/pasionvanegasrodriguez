@@ -3,17 +3,23 @@ const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
 
+const setMenuOpen = (isOpen) =>{
+   if(!navMenu || !navToggle) return
+   navMenu.classList.toggle('show-menu', isOpen)
+   navToggle.setAttribute('aria-expanded', String(isOpen))
+}
+
 /* Show menu */
 if(navToggle){
    navToggle.addEventListener('click', () =>{
-      navMenu.classList.add('show-menu')
+      setMenuOpen(true)
    })
 }
 
 /* Hide menu */
 if(navClose){
    navClose.addEventListener('click', () =>{
-      navMenu.classList.remove('show-menu')
+      setMenuOpen(false)
    })
 }
 
@@ -21,9 +27,7 @@ if(navClose){
 const navLink = document.querySelectorAll('.nav__link')
 
 const linkAction = () =>{
-   const navMenu = document.getElementById('nav-menu')
-   // When we click on each nav__link, we remove the show-menu class
-   navMenu.classList.remove('show-menu')
+   setMenuOpen(false)
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
