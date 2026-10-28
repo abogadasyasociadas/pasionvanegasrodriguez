@@ -1,11 +1,34 @@
+---
+import "@css/style.css";
+import logo from "@img/Logo.svg"
+import Header from "@components/Header.astro";
+import Inicio from "@components/Inicio.astro";
+---
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pasionvanegasrodriguez</title>
-</head>
-<body>
-    
-</body>
+      <meta name="description" content="Pasion Vanegas Rodríguez y Asociadas ofrece servicios legales estratégicos para individuos, familias y empresas, con compromiso con la justicia y resultados." />
+      <meta name="robots" content="index, follow">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href={logo.src} type="image/x-icon">
+
+      <!--=============== REMIXICONS - (Link for icons) ===============-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css">
+
+      <!--=============== SWIPER CSS (Link to swiper js) ===============-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.css">
+    <title>Pasion Vanegas Rodríguez y Asociadas | Asesoría legal</title>
+  </head>
+  <body>
+    <Header />
+    <main class="main">
+      <Inicio />
+    </main>
+    <script>
+      import "@js/main.js";
+    </script>
+  </body>
 </html>

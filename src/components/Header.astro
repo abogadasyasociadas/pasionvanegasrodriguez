@@ -1,0 +1,55 @@
+---
+import {Image} from 'astro:assets';
+import logo from "@img/Logo.svg"
+---
+
+<!--==================== HEADER & NAV ====================-->
+<header class="header" id="header">
+    <nav class="nav container" aria-label="Navegación principal">
+        <a href="/index.html" class="nav__logo">
+            <Image src={logo} width="32" height="32" alt="PasionVanegasRodriguez Logo" />
+            <p>PasionVanegasRodriguez <br> & asociados</p>
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li>
+                    <a href="#inicio" class="nav__link active-link">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="#nosotras" class="nav__link">Nosotras</a>
+                </li>
+
+                <li>
+                    <a href="#areaspractica" class="nav__link">Areas de practica</a>
+                </li>
+
+                <li>
+                    <a href="#equipo" class="nav__link">Equipo</a>
+                </li>
+
+                <li>
+                    <a href="#experiencia" class="nav__link">Experiencia</a>
+                </li>
+            </ul>
+
+            <!-- Close -->
+            <button class="nav__close" id="nav-close" aria-label="Cerrar menú">
+                <i class="ri-close-large-line"></i>
+            </button>
+        </div>
+
+        <!-- Toggle -->
+        <button
+            class="nav__toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+        >
+            <i class="ri-menu-line"></i>
+        </button>
+    </nav>
+</header>

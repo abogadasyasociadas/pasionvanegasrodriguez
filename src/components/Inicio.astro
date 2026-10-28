@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import image1 from "@img/home/image 1.png";
+import whatsappIcon from "@img/icons/icon-whatsapp 1.svg";
+import experienceIcon from "@img/icons/build.svg";
+import clientsIcon from "@img/icons/users.svg";
+import successIcon from "@img/icons/shield-check.svg";
+---
+
+<!--==================== HOME SECTION ====================-->
+<section class="home section" id="inicio" aria-labelledby="home-title">
+    <Image src={image1} alt="" class="home__bg" />
+    <div class="home__shadow" aria-hidden="true"></div>
+    <div class="home__container container grid">
+        <div class="home__data">
+            <p class="home__pretitle">Socio legal de confianza</p>
+            <h1 class="home__title" id="home-title">
+                Experto en asuntos jurídicos<br />
+                Soluciones para ser
+                <span class="home__subtitle">más fuertes<br />mañana</span>
+            </h1>
+            <p class="home__description">
+                En pasionvanegasrodriguez, ofrecemos servicios legales
+                estratégicos y orientados a resultados para individuos, familias
+                y empresas. Con un compromiso con la justicia, la integridad y
+                su éxito, estamos aquí cuando más importa.
+            </p>
+            <a
+                class="home__whatsapp button"
+                href="https://wa.me/?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20sus%20servicios%20legales."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Image src={whatsappIcon} alt="" class="home__whatsapp-icon" />
+                <span>Escribir por whatsapp</span>
+            </a>
+            <ul class="home__stats" aria-label="Resultados y experiencia">
+                <li class="home__stat">
+                    <Image src={experienceIcon} alt="" class="home__stat-icon" />
+                    <div class="home__stat-data">
+                        <strong class="home__stat-value">10+</strong>
+                        <span class="home__stat-label">años de experiencia</span>
+                    </div>
+                </li>
+                <li class="home__stat">
+                    <Image src={clientsIcon} alt="" class="home__stat-icon" />
+                    <div class="home__stat-data">
+                        <strong class="home__stat-value">5K+</strong>
+                        <span class="home__stat-label">Clientes felices</span>
+                    </div>
+                </li>
+                <li class="home__stat">
+                    <Image src={successIcon} alt="" class="home__stat-icon" />
+                    <div class="home__stat-data">
+                        <strong class="home__stat-value">98%</strong>
+                        <span class="home__stat-label">Tasa de éxito del caso</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="home__image"></div>
+        <p class="home__name">PasionVanegasRodriguez</p>
+    </div>
+</section>
