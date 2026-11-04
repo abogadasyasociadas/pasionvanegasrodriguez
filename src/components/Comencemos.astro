@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import city from "@img/City.jpg";
+---
+
+<section
+    class="consultation section"
+    id="comencemos"
+    aria-labelledby="comencemos-title"
+>
+    <div class="consultation__content">
+        <p class="consultation__eyebrow">
+            <i class="ri-scales-line" aria-hidden="true"></i>
+            <span>Comencemos</span>
+        </p>
+        <h2 class="consultation__title" id="comencemos-title">
+            ¿Necesita ayuda legal? Estamos aquí para ayudarle.
+        </h2>
+        <p class="consultation__description">
+            Solicite una consulta con nuestro equipo de expertas y dé el primer
+            paso hacia su solución.
+        </p>
+        <a
+            class="consultation__button"
+            href={`https://wa.me/?text=${encodeURIComponent("Hola, quisiera reservar una consulta.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span>Reserve su consulta</span>
+            <i class="ri-arrow-right-line" aria-hidden="true"></i>
+        </a>
+    </div>
+    <Image
+        src={city}
+        alt="Vista de una ciudad al atardecer"
+        class="consultation__image"
+        widths={[640, 960, 1280]}
+        sizes="(max-width: 760px) 100vw, 40vw"
+    />
+</section>

@@ -1,2 +1,74 @@
-<!--==================== HOME SECTION ====================-->
-<section class="home section" id="equipo"></section>
+---
+import { Image } from "astro:assets";
+import luisa from "@img/equipo/Luisa Fernanda Vanegas.jpg";
+import irene from "@img/equipo/Irene Castro Rodríguez.jpg";
+import tannia from "@img/equipo/Tannia Pasion Becerra.jpg";
+
+const lawyers = [
+    {
+        name: "Luisa Fernanda Vanegas",
+        role: "Directora general",
+        practice: "Derecho comercial",
+        image: luisa,
+    },
+    {
+        name: "Irene Castro Rodríguez",
+        role: "Directora de operaciones y finanzas",
+        practice: "Derecho laboral y PQRS",
+        image: irene,
+    },
+    {
+        name: "Tannia Pasion Becerra",
+        role: "Directora de asuntos jurídicos",
+        practice: "Derecho de familia",
+        image: tannia,
+    },
+];
+---
+
+<section class="team section" id="equipo" aria-labelledby="team-title">
+    <div class="team__container container">
+        <header class="team__header">
+            <p class="team__eyebrow">
+                <i class="ri-scales-line" aria-hidden="true"></i>
+                <span>Nuestras abogadas</span>
+            </p>
+            <h2 class="team__title" id="team-title">
+                Conozca a nuestro equipo legal
+            </h2>
+            <p class="team__description">
+                Nuestras abogadas, con amplia experiencia y dedicación, aportan
+                un gran conocimiento, habilidad y pasión y responsabilidad a
+                cada caso.
+            </p>
+        </header>
+
+        <div class="team__grid">
+            {lawyers.map((lawyer) => (
+                <article class="team__card">
+                    <Image
+                        src={lawyer.image}
+                        alt={`Retrato de ${lawyer.name}`}
+                        class="team__image"
+                        widths={[480, 640]}
+                        sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    />
+                    <div class="team__card-content">
+                        <h3 class="team__name">{lawyer.name}</h3>
+                        <p class="team__role">{lawyer.role}</p>
+                        <p class="team__practice">{lawyer.practice}</p>
+                        <a
+                            class="team__contact"
+                            href={`https://wa.me/?text=${encodeURIComponent(`Hola, quisiera contactar a ${lawyer.name}.`)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Contactar a ${lawyer.name} por WhatsApp`}
+                        >
+                            <i class="ri-arrow-up-right-line" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </article>
+            ))}
+        </div>
+    </div>
+</section>

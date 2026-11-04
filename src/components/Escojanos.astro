@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import courthouse from "@img/Courthouse.jpg";
+
+const reasons = [
+    {
+        icon: "ri-user-star-line",
+        title: "Abogadas experimentadas",
+        description: "Con resultados comprobados.",
+    },
+    {
+        icon: "ri-hand-heart-line",
+        title: "Atención personalizada",
+        description: "Nunca es solo un caso.",
+    },
+    {
+        icon: "ri-shield-check-line",
+        title: "Tarifas transparentes",
+        description: "Sin costos ocultos.",
+    },
+    {
+        icon: "ri-medal-line",
+        title: "Orientadas a resultados",
+        description: "Su éxito es nuestra prioridad.",
+    },
+];
+---
+
+<section class="why-us section" id="porque-elegirnos" aria-labelledby="why-us-title">
+    <div class="why-us__container container">
+        <div class="why-us__content">
+            <p class="why-us__eyebrow">
+                <i class="ri-scales-line" aria-hidden="true"></i>
+                <span>¿Por qué elegir Pasion Vanegas Rodríguez?</span>
+            </p>
+            <h2 class="why-us__title" id="why-us-title">
+                Más que abogados.<br />
+                Sus asesores estratégicos.
+            </h2>
+            <p class="why-us__description">
+                Vamos más allá de los estrados judiciales. Escuchamos,
+                elaboramos estrategias y luchamos por lo que más le importa,
+                con experiencia, dedicación y un trato personalizado.
+            </p>
+        </div>
+
+        <div class="why-us__details">
+            <Image
+                src={courthouse}
+                alt="Estatuas y libros en una biblioteca jurídica"
+                class="why-us__image"
+                widths={[480, 720, 960]}
+                sizes="(max-width: 760px) 100vw, 32vw"
+            />
+            <ul class="why-us__list">
+                {reasons.map((reason) => (
+                    <li class="why-us__item">
+                        <span class="why-us__icon" aria-hidden="true">
+                            <i class={reason.icon}></i>
+                        </span>
+                        <div>
+                            <h3 class="why-us__item-title">{reason.title}</h3>
+                            <p class="why-us__item-description">
+                                {reason.description}
+                            </p>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+</section>

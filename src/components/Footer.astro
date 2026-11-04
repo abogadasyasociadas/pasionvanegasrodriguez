@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import logo from "@img/Logo.svg";
+
+const year = new Date().getFullYear();
+
+const navigation = [
+    { label: "Inicio", href: "#inicio" },
+    { label: "Nosotras", href: "#nosotras" },
+    { label: "Áreas de práctica", href: "#areaspractica" },
+    { label: "Equipo", href: "#equipo" },
+];
+---
+
+<footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__top">
+            <a class="footer__brand" href="#inicio" aria-label="Pasion Vanegas Rodríguez y Asociadas, inicio">
+                <Image src={logo} alt="" class="footer__logo" />
+                <p>Pasion Vanegas Rodríguez <br> <span>Abogados & asociados</span></p>
+            </a>
+
+            <nav class="footer__nav" aria-label="Navegación del pie de página">
+                {navigation.map((item) => (
+                    <a class="footer__link" href={item.href}>{item.label}</a>
+                ))}
+            </nav>
+        </div>
+
+        <div class="footer__contact">
+            <a
+                class="footer__social-link"
+                href={`https://wa.me/?text=${encodeURIComponent("Hola, quisiera comunicarme con Pasion Vanegas Rodríguez y Asociadas.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contactar por WhatsApp"
+            >
+                <i class="ri-whatsapp-line" aria-hidden="true"></i>
+            </a>
+            <span>Estamos aquí para orientarle</span>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">
+                © {year} pasionvanegasrodriguez.com. Todos los derechos reservados.
+            </p>
+            <span class="footer__signature">
+                Pasion Vanegas Rodríguez y Asociadas
+            </span>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,101 @@
+---
+const questions = [
+    {
+        question: "¿En qué áreas del derecho se especializa Pasion Vanegas Rodríguez?",
+        answer:
+            "En nuestras áreas de práctica encontrará derecho de familia, derecho penal, derecho empresarial, jurisdicción voluntaria, derecho civil y derecho comercial. Consúltenos para conocer el alcance de la asesoría que requiere su situación.",
+    },
+    {
+        question: "¿Cómo puedo agendar una consulta?",
+        answer:
+            "Escríbanos por WhatsApp y cuéntenos brevemente qué tipo de orientación necesita. Podrá consultar la disponibilidad y acordar los detalles de su primera reunión.",
+    },
+    {
+        question: "¿La primera consulta tiene algún costo?",
+        answer:
+            "Al agendarla, se confirma el alcance de esa primera sesión y las condiciones de los servicios adicionales que su caso pueda requerir.",
+    },
+    {
+        question: "¿Puedo consultar por una atención a distancia?",
+        answer:
+            "Al establecer contacto, se le indicará la ciudad de origen y las modalidades de atención disponibles. La viabilidad de gestionar su asunto a distancia está sujeta a las características particulares del caso y a la jurisdicción correspondiente.",
+    },
+    {
+        question: "¿Qué información conviene compartir al contactar?",
+        answer:
+            "Comience con una descripción general de su situación y evite enviar documentos sensibles por canales no confirmados. Antes de compartirlos, consulte cómo deben entregarse y cómo se tratará su información.",
+    },
+    {
+        question: "¿Cuánto tiempo puede tardar la resolución de un caso?",
+        answer:
+            "Los plazos varían según el tipo de asunto, su complejidad y las actuaciones necesarias. Tras revisar su situación, podremos orientarle sobre las etapas del proceso; no es posible garantizar una fecha de resolución.",
+    },
+    {
+        question: "¿Se puede garantizar el éxito de un proceso?",
+        answer:
+            "La labor jurídica se enmarca en obligaciones de medio y no de resultado. Ningún profesional del derecho puede asegurar un fallo favorable antes de la decisión judicial. Nuestro compromiso es emplear el rigor técnico, la diligencia y la estrategia legal adecuada para defender sus intereses.",
+    },
+];
+---
+
+<section
+    class="faq section"
+    id="preguntas-frecuentes"
+    aria-labelledby="faq-title"
+>
+    <div class="faq__container container">
+        <header class="faq__header">
+            <div class="faq__intro">
+                <p class="faq__eyebrow">
+                    <i class="ri-question-answer-line" aria-hidden="true"></i>
+                    <span>Preguntas frecuentes</span>
+                </p>
+                <h2 class="faq__title" id="faq-title">Resolvemos sus dudas</h2>
+                <p class="faq__description">
+                    Estas son las preguntas que más nos hacen nuestros clientes.
+                    Si no encuentra la respuesta que busca, no dude en contactarnos.
+                </p>
+            </div>
+            <a
+                class="faq__header-link"
+                href={`https://wa.me/?text=${encodeURIComponent("Hola, quisiera hacer una consulta.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>Contáctanos</span>
+                <i class="ri-arrow-right-line" aria-hidden="true"></i>
+            </a>
+        </header>
+
+        <div class="faq__grid">
+            {questions.map((item, index) => (
+                <details class="faq__item" open>
+                    <summary class="faq__question">
+                        <span class="faq__number">{String(index + 1).padStart(2, "0")}</span>
+                        <span class="faq__question-text">{item.question}</span>
+                        <i class="faq__toggle ri-add-line" aria-hidden="true"></i>
+                    </summary>
+                    <p class="faq__answer">{item.answer}</p>
+                </details>
+            ))}
+        </div>
+
+        <aside class="faq__cta" aria-label="Más preguntas">
+            <div>
+                <h3 class="faq__cta-title">¿Tiene más preguntas?</h3>
+                <p class="faq__cta-description">
+                    Escríbanos para consultar cómo podemos orientarle.
+                </p>
+            </div>
+            <a
+                class="faq__cta-button"
+                href={`https://wa.me/?text=${encodeURIComponent("Hola, quisiera hacer una consulta.")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>Enviar consulta</span>
+                <i class="ri-arrow-right-line" aria-hidden="true"></i>
+            </a>
+        </aside>
+    </div>
+</section>
