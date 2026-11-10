@@ -1,2 +1,73 @@
+---
+import { Image } from "astro:assets";
+import justicia from "@img/martillo_justicia.png";
+---
+
 <!--==================== ABOUT SECTION ====================-->
-<section class="about section" id="nosotras"></section>
+<section class="about section" id="nosotras" aria-labelledby="nosotras-title">
+    <div class="about__container container">
+        <div class="about__visual">
+            <div class="about__image-shell">
+                <Image
+                    src={justicia}
+                    alt="Gavilla de justicia"
+                    class="about__image"
+                />
+            </div>
+
+            <blockquote class="about__quote">
+                “La justicia es la primera virtud de las instituciones
+                sociales.”
+                <cite>— John Rawls</cite>
+            </blockquote>
+        </div>
+
+        <div class="about__content">
+            <div class="about__eyebrow">
+                <i class="ri-scales-line" aria-hidden="true"></i>
+                <span>Sobre Pasion Vanegas Rodríguez</span>
+            </div>
+
+            <h2 class="about__title" id="nosotras-title">
+                Sus derechos. Nuestra
+                <span>misión.</span>
+            </h2>
+
+            <p class="about__text">
+                Pasion Vanegas Rodríguez es un bufete moderno fundado en una
+                convicción simple: todos merecen una sólida representación
+                legal. Combinamos un profundo conocimiento jurídico con un
+                enfoque centrado en el cliente para ofrecer soluciones
+                personalizadas, ya sea que se enfrente a una disputa compleja,
+                esté planificando el futuro o necesite asesoría legal para su
+                negocio.
+            </p>
+
+            <ul class="about__features" aria-label="Valores de la firma">
+                <li class="about__feature">
+                    <span class="about__feature-icon" aria-hidden="true">
+                        <i class="ri-user-voice-line"></i>
+                    </span>
+                    <span>Enfoque centrado en el cliente</span>
+                </li>
+                <li class="about__feature">
+                    <span class="about__feature-icon" aria-hidden="true">
+                        <i class="ri-chat-heart-line"></i>
+                    </span>
+                    <span>Comunicación clara y honesta</span>
+                </li>
+                <li class="about__feature">
+                    <span class="about__feature-icon" aria-hidden="true">
+                        <i class="ri-checkbox-circle-line"></i>
+                    </span>
+                    <span>Trayectoria comprobada</span>
+                </li>
+            </ul>
+
+            <a href="#" class="about__button">
+                <span>Conozca mas sobre nosotras</span>
+                <i class="ri-arrow-right-line" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</section>
